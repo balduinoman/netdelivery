@@ -73,7 +73,7 @@ namespace Net.Delivery.Order.Domain.Services
         }
 
         /// <summary>
-        /// Publish message within the order data to Kafka topic
+        /// Publishs message with order data to Kafka topic
         /// </summary>
         /// <param name="order">Order data</param>
         /// <returns></returns>

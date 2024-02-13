@@ -30,19 +30,10 @@ namespace Net.Delivery.Order.Api.Controllers
         /// </summary>
         /// <param name="items">Order items</param>
         /// <param name="customer">Order customer</param>
-        [HttpPost]
+        [HttpPost("create-order")]
         public async void CreateOrder([FromForm] IList<string> items, [FromForm] Customer customer)
         {
            await _orderService.CreateOrder(items, customer);
-        }
-
-        /// <summary>
-        /// Gets all orders to delivery
-        /// </summary>
-        [HttpGet]
-        public IList<Domain.Entities.Order> GetAllOrdersToDelivery()
-        {
-           return _orderService.GetAllOrdersToDelivery();
         }
 
         /// <summary>
@@ -50,10 +41,19 @@ namespace Net.Delivery.Order.Api.Controllers
         /// </summary>
         /// <param name="orderId">Order identification</param>
         /// <param name="orderSituation">Order situation</param>
-        [HttpPut]
+        [HttpPut("update-order-situation")]
         public async void UpdateOrderSituation([FromForm] string orderId, [FromForm] OrderSituation orderSituation)
         {
             await _orderService.UpdateOrderSituation(orderId, orderSituation);
+        }
+
+        /// <summary>
+        /// Gets all orders to delivery
+        /// </summary>
+        [HttpGet("get-all-orders-to-delivery")]
+        public IList<Domain.Entities.Order> GetAllOrdersToDelivery()
+        {
+           return _orderService.GetAllOrdersToDelivery();
         }
     }
 }
