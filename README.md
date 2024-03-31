@@ -11,4 +11,4 @@ Neste módulo, os participantes serão guiados através do desenvolvimento de um
 1. Clone este repositório em sua máquina local:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/balduinoman/netdelivery.git
